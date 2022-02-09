@@ -1,0 +1,40 @@
+// Get all subscribers
+GET http://localhost:3000/subscribers
+
+### Separates routes as separate entities
+
+// Used for testing to get the ID of the subscriber
+# GET http://localhost:3000/subscribers/15
+// Used to test if the middleware works and get one subscriber via their ID
+GET http://localhost:3000/subscribers/6202c0b081d80936e7c09f77
+
+
+### Test new subscriber route 
+
+POST http://localhost:3000/subscribers
+// We want our server to know that this is going to be JSON that we sent to it
+Content-Type: application/json
+// To send data to the POST Route, leave a space below the POST route on line 9
+// Create a JSON
+{
+    "name": "Amazing Person",
+    "subscribedToChannel": "Web Dev Simplified"
+}
+
+
+###
+
+// Delete subscriber
+// Delete one subscriber with an ID
+DELETE http://localhost:3000/subscribers/6202cbc50afdb7db8f4c3ebf
+
+
+###
+
+// Update an existing subscriber
+PATCH http://localhost:3000/subscribers/6202c0ef81d80936e7c09f7a
+Content-Type: application/json
+
+{
+    "name": "New Name"
+}
